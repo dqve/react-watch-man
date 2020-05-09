@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:app": "webpack --mode development",
+    "start": "run-p start:dev start:api",
+    "start:app": "webpack-dev-server --mode development --hot",
     "build:app": "webpack --mode prodution"
   },
   "dependencies": {
@@ -53,9 +54,9 @@
     "webpack": "4.29.6",
     "webpack-bundle-analyzer": ">=3.3.2",
     "webpack-cli": "3.3.0",
-    "webpack-dev-server": "3.2.1"
+    "webpack-dev-server": "^3.2.1"
   },
   "keywords": [],
-  "author": "",
+  "author": "David Ayo ⚡",
   "license": "ISC"
 }
