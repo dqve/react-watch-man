@@ -1,5 +1,6 @@
-import React, { Component } from 'react-dom'
-import Card from './components/Card/Card'
+import React, {Component} from 'react'
+import ReactDOM from 'react-dom'
+import Card from '../components/Card/Card'
 
 class List extends Component {
     
@@ -7,12 +8,25 @@ class List extends Component {
     	super()
     	this.state = {
     		data : {},
-    		loading: true
+    		loading: true,
     	}
     }
+
+    async componentDidMount() {
+        const movies = await fetch('../../assets/data.json')
+        const moviesJSON = await movies.json()
+        if (moviesJSON) {
+            this.setState({
+                data: moviesJSON,
+                loading: false,
+            });
+        }
+    }
+
 
     render() {
         return < Card />
     }
-};
+}
+
 export default List
