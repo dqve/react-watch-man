@@ -6,7 +6,10 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 const App = () => {
 	return (
 		<div className='container-fluid'>
-			 <List />
+			<nav className='navbar sticky-top navbar-light bgdark'>
+				<h1 className='navbar-brand textlight'>movieList</h1>
+			</nav>
+			<List />
 		</div>
 	)
 }
